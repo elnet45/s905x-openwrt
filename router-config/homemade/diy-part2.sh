@@ -24,6 +24,12 @@ sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_genera
 
 # Modify default Hostname (FROM OpenWRT CHANGE TO Nusantara-STB)
 sed -i 'e/OpenWRT/Nusantara-STB/g' package/base-files/files/bin/config_generate
+
+# Modify default NTP Server
+sed -i 'e/ntp.aliyun.com/0.openwrt.pool.ntp.org/g' package/base-files/files/bin/config_generate
+sed -i 'e/time1.cloud.tencent.com/1.openwrt.pool.ntp.org/g' package/base-files/files/bin/config_generate
+sed -i 'e/time.ustc.edu.cn/2.openwrt.pool.ntp.org/g' package/base-files/files/bin/config_generate
+sed -i 'e/cn.pool.ntp.org/3.openwrt.pool.ntp.org/g' package/base-files/files/bin/config_generate
 #
 # ------------------------------- Main source ends -------------------------------
 
