@@ -21,6 +21,9 @@ echo "DISTRIB_SOURCECODE='Homemade'" >>package/base-files/files/etc/openwrt_rele
 
 # Modify default IP（FROM 192.168.1.1 CHANGE TO 192.168.10.1）
 sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
+
+# Modify default Hostname (FROM OpenWRT CHANGE TO Nusantara-STB)
+sed -i 'e/OpenWRT/Nusantara-STB/g' package/base-files/files/bin/config_generate
 #
 # ------------------------------- Main source ends -------------------------------
 
