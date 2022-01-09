@@ -7,6 +7,10 @@ sed -i 's/luci-theme-bootstrap/luci-theme-material/g' ./feeds/luci/collections/l
 # Modify default theme（FROM luci-theme-material CHANGE TO luci-theme-argon）
 sed -i 's/luci-theme-material/luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
 
+# Modify default language(FROM zh_cn CHANGE TO en)
+sed -i "s/zh_cn/en/g" feeds/luci/modules/luci-base/root/etc/uci-defaults/luci-base
+sed -i "s/zh_cn/en/g" package/lean/default-settings/files/zzz-default-settings
+
 # Add autocore support for armvirt
 sed -i 's/TARGET_rockchip/TARGET_rockchip\|\|TARGET_armvirt/g' package/lean/autocore/Makefile
 
