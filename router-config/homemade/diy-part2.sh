@@ -11,6 +11,10 @@ sed -i 's/luci-theme-material/luci-theme-argon/g' ./feeds/luci/collections/luci/
 sed -i "s/zh_cn/en/g" feeds/luci/modules/luci-base/root/etc/uci-defaults/luci-base
 sed -i "s/zh_cn/en/g" package/lean/default-settings/files/zzz-default-settings
 
+# Modify default timezone(FROM Shanghai/CST-8 CHANGE TO Jakarta/WIB-7)
+sed -i "s/CST-8/WIB-7/g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/Shanghai/Jakarta/g" package/lean/default-settings/files/zzz-default-settings
+
 # Add autocore support for armvirt
 sed -i 's/TARGET_rockchip/TARGET_rockchip\|\|TARGET_armvirt/g' package/lean/autocore/Makefile
 
