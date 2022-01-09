@@ -4,9 +4,6 @@
 # Modify default theme（FROM luci-theme-bootstrap CHANGE TO luci-theme-material）
 sed -i 's/luci-theme-bootstrap/luci-theme-material/g' ./feeds/luci/collections/luci/Makefile
 
-# Modify default theme（FROM luci-theme-material CHANGE TO luci-theme-argon）
-sed -i 's/luci-theme-material/luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
-
 # Modify default language(FROM zh_cn CHANGE TO en)
 sed -i "s/zh_cn/en/g" feeds/luci/modules/luci-base/root/etc/uci-defaults/luci-base
 sed -i "s/zh_cn/en/g" package/lean/default-settings/files/zzz-default-settings
