@@ -43,6 +43,19 @@ cd package/base-files/files/etc/openclash/core/
 clash_main_url=$(curl -sL https://api.github.com/repos/vernesong/OpenClash/releases/tags/Clash | grep /clash-linux-armv8 | sed 's/.*url\": \"//g' | sed 's/\"//g')
 wget $clash_main_url && tar zxvf clash-linux-*.tar.gz && cp clash clash_tun && rm -f clash-linux-*.gz
 chmod +x clash*
+
+# HelmiWRT Packages
+git clone --depth=1 https://github.com/helmiau/helmiwrt-packages
+rm -rf helmiwrt-packages/luci-app-v2raya
+rm -rf helmiwrt-packages/luci-app-freevpnsite
+rm -rf helmiwrt-packages/luci-app-libernet-bin
+rm -rf helmiwrt-packages/luci-app-libernet-plus
+rm -rf helmiwrt-packages/luci-app-libernet
+rm -rf helmiwrt-packages/luci-app-mikhmon
+rm -rf helmiwrt-packages/luci-app-netmon
+rm -rf helmiwrt-packages/luci-app-openspeedtest
+rm -rf helmiwrt-packages/luci-app-shutdown
+rm -rf helmiwrt-packages/luci-app-wegare
 #
 # ------------------------------- Other ends -------------------------------
 
