@@ -2,7 +2,7 @@
 # ------------------------------- Main source started -------------------------------
 #
 # Modify default theme（FROM luci-theme-bootstrap CHANGE TO luci-theme-material）
-# sed -i 's/luci-theme-bootstrap/luci-theme-material/g' ./feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-material/g' ./feeds/luci/collections/luci/Makefile
 
 # Modify default language(FROM zh_cn CHANGE TO en)
 sed -i "s/zh_cn/en/g" feeds/luci/modules/luci-base/root/etc/uci-defaults/luci-base
@@ -20,7 +20,7 @@ sed -i "s|DISTRIB_REVISION='.*'|DISTRIB_REVISION='R$(date +%Y.%m.%d)'|g" package
 echo "DISTRIB_SOURCECODE='Homemade'" >>package/base-files/files/etc/openwrt_release
 
 # Modify default IP（FROM 192.168.1.1 CHANGE TO 192.168.10.1）
-# sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 
 # Modify default Hostname (FROM OpenWRT CHANGE TO Nusantara-STB)
 sed -i 's/OpenWrt/Nusantara-STB/g' package/base-files/files/bin/config_generate
@@ -44,8 +44,18 @@ clash_main_url=$(curl -sL https://api.github.com/repos/vernesong/OpenClash/relea
 wget $clash_main_url && tar zxvf clash-linux-*.tar.gz && cp clash clash_tun && rm -f clash-linux-*.gz
 chmod +x clash*
 
-# Add HelmiWRT Packages
-git clone --depth=1 https://github.com/helmiau/helmiwrt-packages package/openwrt-helmiwrt
+# HelmiWRT Packages
+git clone --depth=1 https://github.com/helmiau/helmiwrt-packages
+rm -rf helmiwrt-packages/luci-app-v2raya
+rm -rf helmiwrt-packages/luci-app-freevpnsite
+rm -rf helmiwrt-packages/luci-app-libernet-bin
+rm -rf helmiwrt-packages/luci-app-libernet-plus
+rm -rf helmiwrt-packages/luci-app-libernet
+rm -rf helmiwrt-packages/luci-app-mikhmon
+rm -rf helmiwrt-packages/luci-app-netmon
+rm -rf helmiwrt-packages/luci-app-openspeedtest
+rm -rf helmiwrt-packages/luci-app-shutdown
+rm -rf helmiwrt-packages/luci-app-wegare
 #
 # ------------------------------- Other ends -------------------------------
 
